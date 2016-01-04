@@ -1,0 +1,5 @@
+<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/bv_ic_ptr_arrow"
+    android:pivotX="50%"
+    android:pivotY="50%" />
+<!-- From: file:/D:/@@Project/@@yuqing/hongfeiyuqing/res/drawable/bv_loading_rotate_pull_re.xml -->
