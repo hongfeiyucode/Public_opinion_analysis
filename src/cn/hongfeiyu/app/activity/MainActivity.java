@@ -273,7 +273,7 @@ public class MainActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 		builder.setTitle("提示");
-		builder.setMessage("确认退出?");
+		builder.setMessage("确认退出舆情分析?");
 		builder.setPositiveButton("确  认", new AlertDialog.OnClickListener() {
 
 			public void onClick(DialogInterface dialog, int which) {

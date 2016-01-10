@@ -57,7 +57,7 @@ public class StartActivity extends FragmentActivity {
 		mInstance = this;
 		setContentView(R.layout.activity_start);
 		Intent intent = getIntent();
-		boo = intent.getBooleanExtra("isFirst", false);
+		boo = intent.getBooleanExtra("isFirst", false);//是否启动介绍界面
 		try {
 			boolean boolean1 = SharedPMananger.getBoolean(
 					SharedPMananger.FRIST_APP, false);
@@ -73,7 +73,8 @@ public class StartActivity extends FragmentActivity {
 					SharedPMananger.UNIVS_START_IMAGE, "");
 			getChanneldata();
 			if (!"".equals(imageurl)) {
-				instance.displayImage(imageurl, start_image, options);
+				//instance.displayImage(imageurl, start_image, options);
+				//是否连接网络启动@TODO
 				getdata(true);
 				startThread();
 			} else {
