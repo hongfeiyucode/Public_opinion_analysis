@@ -220,7 +220,7 @@ public class StartActivity extends FragmentActivity {
 							Log.e("test", "server版本号----" + version);
 							Log.e("test", "local版本号++++" + versionName);
 							if (!versionName.equals(version)) {
-								showUpdataDialog(app);
+								//showUpdataDialog(app);
 							}
 						} catch (Exception e) {
 							e.printStackTrace();

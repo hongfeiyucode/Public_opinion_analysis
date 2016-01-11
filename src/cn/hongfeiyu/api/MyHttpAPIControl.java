@@ -3,6 +3,7 @@ package cn.hongfeiyu.api;
 import org.apache.http.message.BasicHeader;
 
 import android.content.Context;
+import android.util.Log;
 
 import cn.hongfeiyu.app.hongfeiyuApplication;
 import cn.hongfeiyu.app.util.LogUtil;
@@ -65,6 +66,7 @@ public class MyHttpAPIControl {
 	 */
 	private void get(String url, RequestParams params,
 			AsyncHttpResponseHandler handler) {
+			//System.out.println("url是"+url);
 		String urlWithQueryString = AsyncHttpClient.getUrlWithQueryString(url,
 				params);
 		LogUtil.d(this.getClass(), urlWithQueryString, 81);
@@ -115,7 +117,7 @@ public class MyHttpAPIControl {
 
 	/**
 	 * 2.1 启动界面@TODO
-	 * 
+	 * 111？system_name=android&
 	 * @param handler
 	 */
 	public void getSplashInfo(Context context, AsyncHttpResponseHandler handler) {
@@ -127,18 +129,21 @@ public class MyHttpAPIControl {
 				+ "");
 		baseParams.add("controller", "index");
 		baseParams.add("action", "splash");
+		Log.i("启动界面是" + baseParams, "tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
 	/**
 	 * 2.3.1 频道列表
-	 * 
+	 * ?controller=content&action=category    ->
 	 * @param handler
 	 */
+
 	public void getNewsCategory(AsyncHttpResponseHandler handler) {
 		RequestParams baseParams = getBaseParams();
 		baseParams.add("controller", "content");
 		baseParams.add("action", "category");
+		Log.i("频道列表是" + baseParams, "tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
@@ -155,6 +160,7 @@ public class MyHttpAPIControl {
 		baseParams.add("catid", catid);
 		baseParams.add("page", page + "");
 		baseParams.add("time", time + "");
+		Log.i("新闻列表是"+baseParams,"tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
@@ -170,6 +176,7 @@ public class MyHttpAPIControl {
 		baseParams.add("action", "slide");
 		baseParams.add("catid", catid);
 		baseParams.add("time", time + "");
+		Log.i("新闻列表幻灯片是" + baseParams, "tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
@@ -183,6 +190,7 @@ public class MyHttpAPIControl {
 		baseParams.add("controller", "article");
 		baseParams.add("action", "content");
 		baseParams.add("contentid", contentid);
+		Log.i("文章内容是" + baseParams, "tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
@@ -196,6 +204,7 @@ public class MyHttpAPIControl {
 		baseParams.add("controller", "picture");
 		baseParams.add("action", "content");
 		baseParams.add("contentid", contentid);
+		Log.i("组图内容是" + baseParams, "tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
@@ -209,6 +218,7 @@ public class MyHttpAPIControl {
 		baseParams.add("controller", "special");
 		baseParams.add("action", "content");
 		baseParams.add("contentid", contentid);
+		Log.i("专题内容是" + baseParams, "tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
@@ -222,6 +232,7 @@ public class MyHttpAPIControl {
 		baseParams.add("controller", "tongji");
 		baseParams.add("action", "content");
 		baseParams.add("contentid", contentid);
+		Log.i("内容统计是" + baseParams, "tag");
 		get(MY_HTTP_HOME, baseParams, handler);
 	}
 
